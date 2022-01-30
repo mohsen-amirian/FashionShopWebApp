@@ -1,0 +1,26 @@
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+  [scrollWindow]="false">
+  <div class="user-card-container" *ngFor="let user of usersList;">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{user.first_name + ' ' + user.last_name}}</mat-card-title>
+        <mat-card-subtitle>User</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{user.avatar}}" alt="User's photo">
+      <mat-card-content>
+        <label>Email address:</label>
+        <p>{{user.email}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-raised-button [routerLink]="['/user-details', user.id]" color="accent">Details</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<app-loading [show]="showLoading"></app-loading>

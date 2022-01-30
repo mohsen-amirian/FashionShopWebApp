@@ -1,0 +1,28 @@
+.header {
+
+  .navbar-login-info {
+    margin-left: auto;
+    span {
+      padding: 0 10px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 0 8px;
+    }
+  }
+
+  img {
+    &.header-logo {
+      content: url("./../../images/fashion-shop-logo-yellow.png");
+    }
+  }
+
+  @include for-tablet-max-width() {
+    img {
+      &.header-logo {
+      content: url("./../../images/fashion-shop-logo-yellow-small.png");
+      }
+    }
+  }
+}

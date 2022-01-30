@@ -1,0 +1,17 @@
+<mat-toolbar class="header" color="primary">
+  <mat-toolbar-row>
+    <img class="header-logo">
+
+    <a mat-button [routerLink]="['home']">Home</a>
+    <a mat-button *ngIf="isLoggedIn()" [routerLink]="['users']">Users</a>
+
+    <div class="navbar-login-info">
+      <span *ngIf="isLoggedIn()">{{getWelcomeText()}}</span>
+      <button mat-raised-button color="basic" (click)="loginClicked()">
+        {{isLoggedIn() ? 'Logout' : 'Login'}}
+      </button>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+

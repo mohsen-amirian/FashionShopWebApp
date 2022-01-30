@@ -1,0 +1,24 @@
+<div class="login-container">
+  <h2>Login</h2>
+
+  <form [formGroup]="loginFormGroup">
+    <mat-form-field appearance="fill">
+      <mat-label>Email:</mat-label>
+      <input matInput type="email" placeholder="example@gmail.com" formControlName="emailControl">
+      <mat-error *ngIf="!email.valid">
+        {{getEmailError()}}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password:</mat-label>
+      <input matInput type="password" formControlName="passwordControl">
+      <mat-error *ngIf="!password.valid">
+        {{getPasswordError()}}
+      </mat-error>
+    </mat-form-field>
+  </form>
+
+  <button mat-stroked-button color="primary" (click)="onLoginClick()" cdkFocusInitial>Sign in</button>
+</div>
+
+<app-loading [show]="showLoading"></app-loading>

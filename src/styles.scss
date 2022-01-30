@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  width: 100%;
+  }
+
+  $mobile-size: 480px;
+  $tablet-size: 768px;
+  $labtop-size: 1024px;
+  $large-screen-size: 1024px;
+
+
+// imports
+  @import 'assets/scss/mixin/media-query';
+
+  @import 'assets/scss/component/header';
+  @import 'assets/scss/component/footer';
+  @import 'assets/scss/component/users-list';

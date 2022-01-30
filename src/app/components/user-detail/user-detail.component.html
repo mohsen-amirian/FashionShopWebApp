@@ -1,0 +1,8 @@
+
+<div *ngIf="user">
+  <p>{{user.first_name + ' ' + user.last_name}}</p>
+  <img src="{{user.avatar}}" alt="User's photo">
+  <label>Email address:</label>
+  <p>{{user.email}}</p>
+</div>
+<app-loading [show]="showLoading"></app-loading>
