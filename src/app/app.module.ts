@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import {AuthenticationService} from "./services/authentication.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {FashionAuthInterceptor} from "./inceptors/fashion-auth-interceptor";
+import {FashionAuthInterceptor} from "./interceptors/fashion-auth-interceptor";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainTemplateComponent } from './components/main-template/main-template.component';
 import { HeaderComponent } from './components/header/header.component';
