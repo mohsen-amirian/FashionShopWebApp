@@ -1,37 +1,39 @@
-.search-results {
+.users-list-scrollable {
   height: 80%;
   overflow: scroll;
-}
 
-.user-card-container {
-  display: inline-block;
-  width: 33%;
-  padding: 12px 0px;
-}
-
-.example-card {
-  max-width: 200px;
-  margin: auto;
-}
-
-.example-header-image {
-  background-size: cover;
-}
-
-mat-card-actions {
-  a {
-    width: 100%;
-  }
-}
-
-@include for-tablet-max-width() {
   .user-card-container {
-    width: 50%;
+    display: inline-block;
+    width: 33%;
+    padding: 12px 0px;
   }
-}
 
-@include for-mobile-max-width() {
-  .user-card-container {
-    width: 100%;
+  .user-card {
+    max-width: 200px;
+    margin: auto;
+  }
+
+  mat-card-actions {
+    a {
+      width: 100%;
+    }
+  }
+
+  mat-card-title {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  @include for-tablet-max-width() {
+    .user-card-container {
+      width: 50%;
+    }
+  }
+
+  @include for-mobile-max-width() {
+    .user-card-container {
+      width: 100%;
+    }
   }
 }
