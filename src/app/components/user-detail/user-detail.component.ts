@@ -5,8 +5,7 @@ import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.scss']
+  templateUrl: './user-detail.component.html'
 })
 export class UserDetailComponent implements OnInit {
   user!: UserModel;

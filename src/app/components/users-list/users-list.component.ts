@@ -20,24 +20,17 @@ export class UsersListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.showLoading = true;
-    this.currentPageNumber +=1;
-    this.usersService.getUsersList(1, this.USERS_PER_PAGE).subscribe(
-      (res: UsersListOutputModel) => {
-        this.totalPages = res.total_pages as number;
-        this.usersList = this.usersList.concat(res.data as any);
-        this.showLoading = false;
-      },
-      (error) => {
-        console.log(error);
-        this.showLoading = false;
-      }
-    );
+    this.loadUsers();
   }
 
   onScroll() {
     if(this.currentPageNumber < this.totalPages) {
-      this.showLoading = true;
+      this.loadUsers();
+    }
+  }
+
+  loadUsers() {
+    this.showLoading = true;
       this.currentPageNumber += 1;
       this.usersService.getUsersList(this.currentPageNumber, this.USERS_PER_PAGE).subscribe(
         (res: UsersListOutputModel) => {
@@ -50,7 +43,5 @@ export class UsersListComponent implements OnInit {
           this.showLoading = false;
         }
       );
-    }
   }
-
 }
